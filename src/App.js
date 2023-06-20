@@ -2,20 +2,27 @@ import { useState } from 'react';
 import Board from './components/board';
 
 export default function App() {
-  const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-  const [status, setStatus] = useState('X');
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquares = history[history.length - 1];
+
+  function handlePlay(nextSquares) {
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
+  }
+
   return( 
     <>
-      <div className='status'>{status}</div>
-      <Board 
-        squares={squares} 
-        setSquares={setSquares} 
-        xIsNext={xIsNext} 
-        setXIsNext={setXIsNext}
-        status={status}
-        setStatus={setStatus}
-      />
+      <div className='game'>
+        <Board 
+          xIsNext={xIsNext} 
+          squares={currentSquares} 
+          onPlay={handlePlay}
+        />
+      </div>
+      <div className='game'>
+        <div className='status'>Teste</div>
+      </div>
     </>
 
   )

@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  border: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,8 +14,26 @@ code {
     monospace;
 }
 
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 20rem;
+}
+
+.status {
+  font-size: 2rem;
+  padding: 0;
+  padding-bottom: 2rem;
+  margin: 0;
+  border: 0;
+}
+
 .board {
-   margin: 2rem;
    padding: 0;
    align-items: top;
    display: block;
@@ -21,10 +41,13 @@ code {
 
 .board-row {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  margin: 0%;
+  padding: 0%;
+  border: 0%;
   height: 5rem;
+  width: 15rem;
 }
 
 .square {
@@ -40,7 +63,4 @@ code {
   font-weight: bold;
 }
 
-.status {
-  margin: 2rem;
-  font-size: 2rem;
-}
+
